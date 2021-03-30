@@ -1,33 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Marker Animation</title>
     <style>
       .map {
-        height: 400px;
         width: 400px;
+        height:400px;
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
-    <title>OpenLayers example</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
   </head>
-
   <body>
-    <h2>My Map</h2>
     <div id="map" class="map"></div>
-    <script type="text/javascript">
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([0, 52]),
-          zoom: 4
-        })
-      });
-    </script>
+    <button id="start-animation">Start Animation</button>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script type='text/javascript' src='map.js'></script>
   </body>
 </html>

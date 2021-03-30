@@ -1,0 +1,74 @@
+html
+head
+  meta(charset='UTF-8')
+  title Leg it for learning
+  style.
+    .map {
+    width= 100%;
+    height=100%;
+    }
+    .linkz{
+      text-align: center;
+      }
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css', type='text/css')
+  link(rel='stylesheet' href='/css/pure-min.css')
+  link(rel='stylesheet' href='/css/grids-responsive-min.css')
+  link(rel='stylesheet' href='/css/blog.css')
+
+body
+
+ #layout.pure-g
+  .sidebar.pure-u-1.pure-u-md-1-4
+      #map.map
+      script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+      script(src='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js')
+      script(type='text/javascript',id='page', data-drun=distancerun, src='map.js')
+       
+  .content.pure-u-1.pure-u-md-3-4
+
+     .posts
+      // A single blog post
+      section.post
+        .linkz
+         .pure-u-1-3 
+          a(href='http://www.codep.co.uk') About CODEP
+         .pure-u-1-3 
+          a(href='http://www.codep.co.uk/springfundraiser') Get involved in the challenge
+         .pure-u-1-3 
+          a(href='https://www.peoplesfundraising.com/donation/codep') Make a donation
+          p
+
+        header.post-header
+          h1.post-title Leg it for learning
+          p.post-meta Getting sweaty for education
+        .post-description
+         
+         h3="We've run " + distancerun + " km so far with " + (4800-distancerun) + " km to go. Help us get all the way to our learning centre!"
+         
+         .pure-u-1-2
+          p CODEP is a small scale grassroots charity helping improve education for children and adults in Waterloo, Sierra Leone.
+          p Our first big fundraiser of the year is Leg it For Learning - a challenge for everyone who takes part to cumulatively cover 4800km over the space of three weeks in March and April - averaging 1,000 miles a week! 
+          p This distance can be covered by any human-powered means - walking, cycling, rowing… however you prefer. What matters is everyone sets a goal that is challenging to them and raises money for CODEP while doing so. Which brings us on to our donation target, which we have set to £10,760. This is how much it costs to cover teacher salaries and other expenses for six months i.e. what is required to keep the show on the road. See here for a full breakdown on where the money goes. 
+          p Why? 4800km is the total distance between Waterloo, London (where our UK volunteers are from) and Waterloo, Sierra Leone (where our learning centre is based) as the crow flies.
+         
+
+         .pure-u-1-2
+          .post-images.pure-g
+            a(href='http://www.codep.co.uk')
+            img.pure-img-responsive(alt='The library' src='photo.jpg')
+            p         
+            iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
+        p
+        button#start-animation Restart Journey!
+
+
+   
+     
+
+  .footer
+      .pure-menu.pure-menu-horizontal
+        ul
+          li.pure-menu-item
+            a.pure-menu-link(href='http://purecss.io/') About
+          li.pure-menu-item
+            a.pure-menu-link(href='http://twitter.com/yuilibrary/') Twitter

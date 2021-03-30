@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname+'/views/index.html'), {
+  res.render('index', {
     distancerun
   });
   console.log("pinged the front page");

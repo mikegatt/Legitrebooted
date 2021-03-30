@@ -1,10 +1,19 @@
-
-distancerun = 0.5;
+var script_tag = document.getElementById('page')
+var drun = script_tag.getAttribute("data-drun");
+//drun =5000;
+distancerunperc = drun/4800;
+if(distancerunperc > 1){distancerunperc = 1}
 
 var key = 'Get your own API key at https://www.maptiler.com/cloud/';
 var attributions =
 '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> ' +
 '<a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>';
+
+var source = new ol.source.TileJSON({
+  url: 'https://api.maptiler.com/maps/voyager/tiles.json?key=GVCf6RELAt4XEHWQyAxE',
+  tileSize: 512,
+  crossOrigin: 'anonymous'
+});
 
 var center = ol.proj.fromLonLat([-9.7,31.4]);
 var map = new ol.Map({
@@ -17,7 +26,8 @@ maxZoom: 19,
 }),
 layers: [
 new ol.layer.Tile({
-    source: new ol.source.OSM()}) ],
+    //source: new ol.source.OSM()}) ],
+    source:source})],
 });
 
 // The polyline string is read from a JSON similiar to those returned
@@ -113,7 +123,7 @@ if (animating) {
 var elapsedTime = frameState.time - startTime;
 var distance = (speed * elapsedTime) / 1e6;
 
-if (distance >= distancerun) {
+if (distance >= distancerunperc) {
   stopAnimation(true);
   return;
 }
@@ -133,7 +143,7 @@ stopAnimation(false);
 animating = true;
 startTime = new Date().getTime();
 speed = 50;
-startButton.textContent = 'Cancel Animation';
+startButton.textContent = 'Cancel Journey';
 // hide geoMarker
 geoMarker.changed();
 // just in case you pan somewhere else
@@ -145,10 +155,10 @@ map.render();
 
 function stopAnimation(ended) {
 animating = false;
-startButton.textContent = 'Start Animation';
+startButton.textContent = 'Restart Journey!';
 
 // if animation cancelled set the marker at the beginning
-var coord = route.getCoordinateAt(ended ? distancerun : 0);
+var coord = route.getCoordinateAt(ended ? distancerunperc : 0);
 geoMarker.getGeometry().setCoordinates(coord);
 // remove listener
 vectorLayer.un('postrender', moveFeature);
