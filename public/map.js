@@ -15,7 +15,7 @@ var source = new ol.source.TileJSON({
   crossOrigin: 'anonymous'
 });
 
-var center = ol.proj.fromLonLat([-9.7,31.4]);
+var center = ol.proj.fromLonLat([-6.7,32.1]);
 var map = new ol.Map({
 target: document.getElementById('map'),
 view: new ol.View({
@@ -155,7 +155,7 @@ map.render();
 
 function stopAnimation(ended) {
 animating = false;
-startButton.textContent = 'Restart Journey!';
+startButton.textContent = 'Restart Journey';
 
 // if animation cancelled set the marker at the beginning
 var coord = route.getCoordinateAt(ended ? distancerunperc : 0);

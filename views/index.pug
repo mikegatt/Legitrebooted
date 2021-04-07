@@ -2,15 +2,9 @@ html
 head
   meta(charset='UTF-8')
   title Leg it for learning
-  style.
-    .map {
-    width= 100%;
-    height=100%;
-    }
-    .linkz{
-      text-align: center;
-      }
-  link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css', type='text/css')
+  //link(rel='stylesheet', href='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css', type='text/css')
+  link(rel='shortcut icon', type='image/ico', href='/favicon.ico')
+  link(rel='stylesheet', href='/css/ol.css', type='text/css')
   link(rel='stylesheet' href='/css/pure-min.css')
   link(rel='stylesheet' href='/css/grids-responsive-min.css')
   link(rel='stylesheet' href='/css/blog.css')
@@ -20,14 +14,13 @@ body
  #layout.pure-g
   .sidebar.pure-u-1.pure-u-md-1-4
       #map.map
-      script(src='https://code.jquery.com/jquery-3.6.0.min.js')
-      script(src='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js')
+      //script(src='https://code.jquery.com/jquery-3.6.0.min.js')
+      //script(src='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js')
+      script(src='/ol.js')
       script(type='text/javascript',id='page', data-drun=distancerun, src='map.js')
        
   .content.pure-u-1.pure-u-md-3-4
-
      .posts
-      // A single blog post
       section.post
         .linkz
          .pure-u-1-3 
@@ -36,39 +29,69 @@ body
           a(href='http://www.codep.co.uk/springfundraiser') Get involved in the challenge
          .pure-u-1-3 
           a(href='https://www.peoplesfundraising.com/donation/codep') Make a donation
-          p
 
         header.post-header
-          h1.post-title Leg it for learning
-          p.post-meta Getting sweaty for education
-        .post-description
-         
-         h3="We've run " + distancerun + " km so far with " + (4800-distancerun) + " km to go. Help us get all the way to our learning centre!"
-         
-         .pure-u-1-2
-          p CODEP is a small scale grassroots charity helping improve education for children and adults in Waterloo, Sierra Leone.
-          p Our first big fundraiser of the year is Leg it For Learning - a challenge for everyone who takes part to cumulatively cover 4800km over the space of three weeks in March and April - averaging 1,000 miles a week! 
-          p This distance can be covered by any human-powered means - walking, cycling, rowing… however you prefer. What matters is everyone sets a goal that is challenging to them and raises money for CODEP while doing so. Which brings us on to our donation target, which we have set to £10,760. This is how much it costs to cover teacher salaries and other expenses for six months i.e. what is required to keep the show on the road. See here for a full breakdown on where the money goes. 
-          p Why? 4800km is the total distance between Waterloo, London (where our UK volunteers are from) and Waterloo, Sierra Leone (where our learning centre is based) as the crow flies.
-         
+         h1.post-title 
+           | Leg it for learning
+        
+        .post-description 
+           h3!="We've run <em>" + distancerun + " km </em>so far with <em>" + (4800-distancerun) + " km </em>to go. Help us get all the way to our learning centre!"
+          
+        .pure-g
+          .pure-u-1.pure-u-md-1-2
+           .post-description
+            p CODEP is a small scale grassroots charity helping improve education for children and adults in Waterloo, Sierra Leone.
+            p Our first big fundraiser of the year is Leg it For Learning - a challenge for everyone who takes part to cumulatively cover 4800km over the space of three weeks in March and April - averaging 1,000 miles a week! 
+            p This distance can be covered by any human-powered means - walking, cycling, rowing… however you prefer. What matters is everyone sets a goal that is challenging to them and raises money for CODEP while doing so. Which brings us on to our donation target, which we have set to £10,760. This is how much it costs to cover teacher salaries and other expenses for six months i.e. what is required to keep the show on the road. See here for a full breakdown on where the money goes. 
+            p Why? 4800km is the total distance between Waterloo, London (where our UK volunteers are from) and Waterloo, Sierra Leone (where our learning centre is based) as the crow flies.
+            .l-box         
+               center
+                iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
+            .l-box 
+              center
+               iframe(allowtransparency='' frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=true' width='300')
+ 
+          .pure-u-1.pure-u-md-1-2
+            //.l-box
+             img.pure-img(alt='The library' src='photo.jpg')
+            .pure-u-1-4
+             .l-box
+              a(href='https://www.facebook.com/Construction-and-Development-Partnership-200566590093039')
+               img(src='/socials/fb.png', width = 50, height= auto)
+            .pure-u-1-4
+             .l-box
+              a(href='https://www.instagram.com/codepuk2020/')
+               img(src='/socials/ig.png', width = 50, height= auto)
+            .pure-u-1-4
+             .l-box
+              a(href='https://www.linkedin.com/company/construction-development-partnership')
+               img(src='/socials/li.png', width = 50, height= auto)
+            .pure-u-1-4
+             .l-box
+              a(href='https://twitter.com/codepsl?lang=en')
+               img(src='/socials/tw.png', width = 50, height= auto)
 
-         .pure-u-1-2
-          .post-images.pure-g
-            a(href='http://www.codep.co.uk')
-            img.pure-img-responsive(alt='The library' src='photo.jpg')
-            p         
-            iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
-        p
-        button#start-animation Restart Journey!
+           
 
+            .l-box
+             .embedsocial-hashtag(data-ref='835407c29efff1a2430b812d74e1abae16dd17db')
+              a.feed-powered-by-es(href='https://embedsocial.com/products/embedfeed/' target='_blank' title='Powered by EmbedSocial')
+               | Powered by EmbedSocial
+               span &rarr;
+             script.
+              (function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));
 
-   
-     
-
-  .footer
+     .footer
+      button.pure-button#start-animation Restart Journey
       .pure-menu.pure-menu-horizontal
         ul
           li.pure-menu-item
-            a.pure-menu-link(href='http://purecss.io/') About
+            a.pure-menu-link(href='http://www.codep.co.uk') About
           li.pure-menu-item
-            a.pure-menu-link(href='http://twitter.com/yuilibrary/') Twitter
+            a.pure-menu-link(href='https://www.linkedin.com/company/construction-development-partnership') Linkedin
+          li.pure-menu-item
+            a.pure-menu-link(href='https://www.facebook.com/Construction-and-Development-Partnership-200566590093039') Facebook
+          li.pure-menu-item
+            a.pure-menu-link(href='https://twitter.com/codepsl?lang=en') Twitter
+          li.pure-menu-item
+            a.pure-menu-link(href='https://www.instagram.com/codepuk2020/') Instagram
