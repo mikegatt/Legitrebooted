@@ -17,6 +17,7 @@ body
       //script(src='https://code.jquery.com/jquery-3.6.0.min.js')
       //script(src='https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js')
       script(src='/ol.js')
+      script(src='/countdown.js')
       script(type='text/javascript',id='page', data-drun=distancerun, src='map.js')
        
   .content.pure-u-1.pure-u-md-3-4
@@ -24,7 +25,7 @@ body
       section.post
         .linkz
          .pure-u-1-3 
-          a(href='http://www.codep.co.uk') About CODEP
+           a(href='http://www.codep.co.uk') About CODEP
          .pure-u-1-3 
           a(href='http://www.codep.co.uk/springfundraiser') Get involved in the challenge
          .pure-u-1-3 
@@ -36,10 +37,12 @@ body
         
         .post-description 
            h3!="We've run <em>" + distancerun + " km </em>so far with <em>" + (4800-distancerun) + " km </em>to go. Help us get all the way to our learning centre!"
-          
+
+
         .pure-g
           .pure-u-1.pure-u-md-1-2
            .post-description
+            em#countdown
             p CODEP is a small scale grassroots charity helping improve education for children and adults in Waterloo, Sierra Leone.
             p Our first big fundraiser of the year is Leg it For Learning - a challenge for everyone who takes part to cumulatively cover 4800km over the space of three weeks in March and April - averaging 1,000 miles a week! 
             p This distance can be covered by any human-powered means - walking, cycling, rowing… however you prefer. What matters is everyone sets a goal that is challenging to them and raises money for CODEP while doing so. Which brings us on to our donation target, which we have set to £10,760. This is how much it costs to cover teacher salaries and other expenses for six months i.e. what is required to keep the show on the road. See here for a full breakdown on where the money goes. 
