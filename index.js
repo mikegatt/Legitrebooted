@@ -26,7 +26,12 @@ console.log("Alive and kicking at Port 3000");
 
 //-------------------------------------------------------
 
-var distancerun;
+var distancerun = 0;
+/*
+---------------------------------------------------------
+THIS NEEDS TO BE UNCOMMENTED WHEN WE KICK OFF TO ENABLE DISTANCE FROM STRAVA TO BE ADDED
+---------------------------------------------------------
+
 makeRequest();
 setInterval(makeRequest,1000*60*15);
 
@@ -54,3 +59,4 @@ function getSoupy(response) {
     console.error(error);
   }
 }
+*/
