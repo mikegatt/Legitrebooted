@@ -1,6 +1,5 @@
 var script_tag = document.getElementById('page')
 var drun = script_tag.getAttribute("data-drun");
-//drun =5000;
 distancerunperc = drun/4800;
 if(distancerunperc > 1){distancerunperc = 1}
 

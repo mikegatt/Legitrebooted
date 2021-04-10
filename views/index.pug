@@ -11,7 +11,7 @@ head
 
 body
 
- #layout.pure-g
+ #layout.pure-g-r
   .sidebar.pure-u-1.pure-u-md-1-4
       #map.map
       //script(src='https://code.jquery.com/jquery-3.6.0.min.js')
@@ -39,7 +39,7 @@ body
            h3!="We've run <em>" + distancerun + " km </em>so far with <em>" + (4800-distancerun) + " km </em>to go. Help us get all the way to our learning centre!"
 
 
-        .pure-g
+        .pure-g-r
           .pure-u-1.pure-u-md-1-2
            .post-description
             em#countdown
@@ -47,16 +47,15 @@ body
             p Our first big fundraiser of the year is Leg it For Learning - a challenge for everyone who takes part to cumulatively cover 4800km over the space of three weeks in March and April - averaging 1,000 miles a week! 
             p This distance can be covered by any human-powered means - walking, cycling, rowing… however you prefer. What matters is everyone sets a goal that is challenging to them and raises money for CODEP while doing so. Which brings us on to our donation target, which we have set to £10,760. This is how much it costs to cover teacher salaries and other expenses for six months i.e. what is required to keep the show on the road. See here for a full breakdown on where the money goes. 
             p Why? 4800km is the total distance between Waterloo, London (where our UK volunteers are from) and Waterloo, Sierra Leone (where our learning centre is based) as the crow flies.
-            .l-box         
-               center
-                iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
-            .l-box 
-              center
-               iframe(allowtransparency='' frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=true' width='300')
+            .pure-u-1-2 
+             .bigbutton
+              a(href='http://www.codep.co.uk/springfundraiser') Sign up here!
+            .pure-u-1-2
+             .bigbutton
+              a(href='https://www.peoplesfundraising.com/fundraising-team/LegIt4Learning') Visit our fundraising page
+            
  
           .pure-u-1.pure-u-md-1-2
-            //.l-box
-             img.pure-img(alt='The library' src='photo.jpg')
             .pure-u-1-4
              .l-box
               a(href='https://www.facebook.com/Construction-and-Development-Partnership-200566590093039')
@@ -77,12 +76,14 @@ body
            
 
             .l-box
-             .embedsocial-hashtag(data-ref='835407c29efff1a2430b812d74e1abae16dd17db')
-              a.feed-powered-by-es(href='https://embedsocial.com/products/embedfeed/' target='_blank' title='Powered by EmbedSocial')
-               | Powered by EmbedSocial
-               span &rarr;
-             script.
-              (function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));
+              script(src='https://cdn.lightwidget.com/widgets/lightwidget.js')
+              iframe.lightwidget-widget(src='//lightwidget.com/widgets/ba1d24c1b9005d5bbb89f5ce12f5f12a.html' scrolling='no' allowtransparency='true' style='width:100%;border:0;overflow:hidden;')
+            .l-box         
+               center
+                iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
+            .l-box 
+              center
+               iframe(allowtransparency='' frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=true' width='300')
 
      .footer
       button.pure-button#start-animation Restart Journey
