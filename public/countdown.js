@@ -16,12 +16,12 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = 'The fundraiser kicks off in ' + days + "d " + hours + "h "
+  document.getElementById("countdown").innerHTML = 'The fundraiser kicks off on 1st May 2022 - in ' + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
 
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "The challenge has started!";
+    document.getElementById("countdown").innerHTML = "The challenge has started!";
   }
 }, 1000);
