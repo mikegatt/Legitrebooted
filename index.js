@@ -27,10 +27,7 @@ console.log("Alive and kicking at Port 3000");
 //-------------------------------------------------------
 
 var distancerun = 0;
-/*
----------------------------------------------------------
-THIS NEEDS TO BE UNCOMMENTED WHEN WE KICK OFF TO ENABLE DISTANCE FROM STRAVA TO BE ADDED
----------------------------------------------------------
+
 
 makeRequest();
 setInterval(makeRequest,1000*60*15);
@@ -52,11 +49,12 @@ function getSoupy(response) {
   try {
     soupb = soupa[1].descendants;
     soupc = soupb[0]._text;
-    soupd = soupc.replace("\n", "");
-    distancerun = soupd;
-    console.log(soupd);
+    soupd = soupc.replace(/\D/g,'');
+    soupe = soupd.slice(0, -1); 
+    //here comes last weeks adjuster!
+    distancerun = soupe - 1031;
+    console.log(soupe);
   } catch (error) {
     console.error(error);
   }
 }
-*/
