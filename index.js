@@ -52,7 +52,7 @@ function getSoupy(response) {
     soupd = soupc.replace(/\D/g,'');
     soupe = soupd.slice(0, -1); 
     //here comes last weeks adjuster!
-    distancerun = Number(soupe) + 1294;
+    distancerun = Number(soupe) + 5419;
     console.log(soupe);
   } catch (error) {
     console.error(error);
