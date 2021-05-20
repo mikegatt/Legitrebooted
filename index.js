@@ -5,6 +5,9 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 var JSSoup = require("jssoup").default;
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var geojsonLength = require('geojson-length');
+const fs = require('fs');
+const { time } = require("console");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -13,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
   res.render('index', {
-    distancerun
+    distancerun,
+    distancetotal
   });
   console.log("pinged the front page");
 });
@@ -25,12 +29,23 @@ app.listen(process.env.port || 3000);
 console.log("Alive and kicking at Port 3000");
 
 //-------------------------------------------------------
-
+var distancetotal=0;
 var distancerun = 0;
+var lastdistance = 8892;
+var laststravadist = 8892;
 
 
+readCoordinates();
 makeRequest();
-setInterval(makeRequest,1000*60*15);
+setInterval(makeRequest,1000*60*10);
+
+
+function readCoordinates(){
+  var data = fs.readFileSync('public\\coordinates.json','utf8')
+  coordinates = JSON.parse(data);
+  distancetotal = geojsonLength(coordinates.features[0].geometry)/1000;
+  console.log(distancetotal + ' total route length');
+}
 
 function makeRequest(){
 const Http = new XMLHttpRequest();
@@ -39,7 +54,7 @@ const Url =
 Http.open("GET", Url);
 Http.send();
 Http.onreadystatechange = (e) => {
-  getSoupy(Http.responseText);
+  if(Http.readyState == 3) {getSoupy(Http.responseText);}
 };
 }
 
@@ -47,13 +62,21 @@ function getSoupy(response) {
   var soup = new JSSoup(response);
   var soupa = soup.findAll("b", "stat-text");
   try {
+
     soupb = soupa[1].descendants;
     soupc = soupb[0]._text;
     soupd = soupc.replace(/\D/g,'');
     soupe = soupd.slice(0, -1); 
-    //here comes last weeks adjuster!
-    distancerun = Number(soupe) + 8892;
-    console.log(soupe);
+stravadist = Number(soupe);
+
+    if(stravadist<laststravadist){adjuster = lastdistance}
+    distancerun = stravadist + adjuster;
+
+    laststravadist = stravadist;
+    lastdistance = distancerun;
+
+    console.log('Strava dist: ' + soupe);
+    console.log('Dist to show: ' + distancerun);
   } catch (error) {
     console.error(error);
   }

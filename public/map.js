@@ -1,6 +1,7 @@
 var script_tag = document.getElementById('page')
 var drun = script_tag.getAttribute("data-drun");
-distancerunperc = drun/4800;
+var dtot = script_tag.getAttribute("data-dtot");
+distancerunperc = drun/dtot;
 if(distancerunperc > 1){distancerunperc = 1}
 
 var key = 'Get your own API key at https://www.maptiler.com/cloud/';
@@ -14,12 +15,12 @@ var source = new ol.source.TileJSON({
   crossOrigin: 'anonymous'
 });
 
-var center = ol.proj.fromLonLat([-6.7,32.1]);
+var center = ol.proj.fromLonLat([15.5,16.75]);
 var map = new ol.Map({
 target: document.getElementById('map'),
 view: new ol.View({
 center: center,
-zoom: 4,
+zoom: 2.9,
 minZoom: 2,
 maxZoom: 19,
 }),
@@ -141,7 +142,7 @@ stopAnimation(false);
 } else {
 animating = true;
 startTime = new Date().getTime();
-speed = 50;
+speed = 75;
 startButton.textContent = 'Cancel Journey';
 // hide geoMarker
 geoMarker.changed();

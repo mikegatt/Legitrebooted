@@ -16,7 +16,7 @@ body
       #map.map
       script(src='/ol.js')
       script(src='/countdown.js')
-      script(type='text/javascript',id='page', data-drun=distancerun, src='map.js')
+      script(type='text/javascript',id='page', data-drun=distancerun, data-dtot=distancetotal, src='map.js')
        
   .content.pure-u-1.pure-u-md-3-4
      img(src='LIFL Banner.png')  
@@ -33,7 +33,7 @@ body
          h1.post-title 
            | Leg it for learning
          .post-description 
-            h2!="We've travelled " + distancerun + " km so far with " + (4800-distancerun) + " km to go. Help us get all the way to our learning centre!"    
+            h2!="We've travelled " + distancerun + " km so far which is " + (distancerun-4800) + " km beyond our original target - awesome! Help us get as far as we can!"    
             h3#countdown
  
 
