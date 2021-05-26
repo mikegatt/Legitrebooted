@@ -41,7 +41,7 @@ setInterval(makeRequest,1000*60*10);
 
 
 function readCoordinates(){
-  var data = fs.readFileSync('public\\coordinates.json','utf8')
+  var data = fs.readFileSync('coordinates.json','utf8')
   coordinates = JSON.parse(data);
   distancetotal = geojsonLength(coordinates.features[0].geometry)/1000;
   console.log(distancetotal + ' total route length');
