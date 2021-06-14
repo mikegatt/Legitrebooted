@@ -37,7 +37,7 @@ var laststravadist = 8892;
 
 readCoordinates();
 makeRequest();
-setInterval(makeRequest,1000*60*10);
+setInterval(makeRequest,1000*60*30);
 
 
 function readCoordinates(){
