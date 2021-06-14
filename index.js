@@ -31,8 +31,8 @@ console.log("Alive and kicking at Port 3000");
 //-------------------------------------------------------
 var distancetotal=0;
 var distancerun = 0;
-var lastdistance = 8892;
-var laststravadist = 8892;
+var lastdistance = 18000;
+var laststravadist = 18000;
 
 
 readCoordinates();
