@@ -29,15 +29,15 @@ app.listen(process.env.port || 3000);
 console.log("Alive and kicking at Port 3000");
 
 //-------------------------------------------------------
-var distancetotal=0;
-var distancerun = 0;
+var distancetotal=10000;
+var distancerun = 9000;
 var lastdistance = 18000;
 var laststravadist = 18000;
 
 
 readCoordinates();
-makeRequest();
-setInterval(makeRequest,1000*60*30);
+//makeRequest();
+//setInterval(makeRequest,1000*60*30);
 
 
 function readCoordinates(){
@@ -46,7 +46,7 @@ function readCoordinates(){
   distancetotal = geojsonLength(coordinates.features[0].geometry)/1000;
   console.log(distancetotal + ' total route length');
 }
-
+/*
 function makeRequest(){
 const Http = new XMLHttpRequest();
 const Url =
@@ -79,5 +79,8 @@ stravadist = Number(soupe);
     console.log('Dist to show: ' + distancerun);
   } catch (error) {
     console.error(error);
+    
   }
+ 
 }
+ */
