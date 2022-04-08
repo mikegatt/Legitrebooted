@@ -1,4 +1,4 @@
-var countDownDate = new Date("May 23, 2021 00:00:00").getTime();
+var countDownDate = new Date("May 06, 2022 00:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -16,7 +16,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = 'See you on the finish line in ' + days + " days " + hours + " hours "
+  document.getElementById("countdown").innerHTML = 'Challenge begins in ' + days + " days " + hours + " hours "
   + minutes + " minutes " + seconds + " seconds ";
 
   // If the count down is finished, write some text

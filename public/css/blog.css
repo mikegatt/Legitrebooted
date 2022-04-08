@@ -184,7 +184,7 @@ img.displayed {
   font-size: 4em;
   color: #222;
   margin-bottom: 1em;
-  font-family: Georgia, "Cambria", serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 .post-avatar {
   border-radius: 50px;
