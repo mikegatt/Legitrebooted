@@ -16,6 +16,7 @@ h2{
     font-weight: 100;
     font-size: 36px;
     line-height: 1.2;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h3 {
   font-weight: 100;
@@ -182,9 +183,9 @@ img.displayed {
 }
 .post-title {
   font-size: 4em;
-  color: #222;
+  color: rgb(248, 92, 46);
   margin-bottom: 1em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .post-avatar {
   border-radius: 50px;
