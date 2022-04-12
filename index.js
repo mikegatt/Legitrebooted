@@ -58,7 +58,7 @@ function readCoordinates(){
 function getDistance(){
 const Http = new XMLHttpRequest();
 const Url =
-  "https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false";
+  "https://www.strava.com/clubs/1040721/latest-rides/704c47a76ba86a03cf0c64c8f41965f3a118c31c?show_rides=false";
 Http.open("GET", Url);
 Http.send();
 Http.onreadystatechange = (e) => {

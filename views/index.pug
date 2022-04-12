@@ -32,15 +32,19 @@ body
         header.post-header  
          h1.post-title 
            | LEG IT FOR LEARNING 2022
-         .post-description 
-            //h2!="We've travelled " + distancerun + " km so far which is " + (distancerun-10000) + " km beyond our original target - awesome! Help us get as far as we can!"
-            h2!="Friday 6th to Thursday 26th May 2022"
-            h3#countdown
- 
-
-
-
+         
         .pure-g-r
+          .pure-u-1.pure-u-md-2-3
+            .post-description 
+                //h2!="We've travelled " + distancerun + " km so far which is " + (distancerun-10000) + " km beyond our original target - awesome! Help us get as far as we can!"
+                h2!="Friday 6th to Thursday 26th May 2022"
+                h3#countdown
+ 
+          .pure-u-1.pure-u-md-1-3
+            .l-box         
+               center
+                iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/1040721/latest-rides/704c47a76ba86a03cf0c64c8f41965f3a118c31c?show_rides=false' width='300')
+ 
           .pure-u-1.pure-u-md-1-2
            .post-description
             em Whats it about?
@@ -79,29 +83,23 @@ body
               script(src='https://cdn.lightwidget.com/widgets/lightwidget.js')
               iframe.lightwidget-widget(src='https://cdn.lightwidget.com/widgets/ba1d24c1b9005d5bbb89f5ce12f5f12a.html' scrolling='no' allowtransparency='true' style='width:100%;border:0;overflow:hidden;')
             .pure-u-1
-             .pure-u-1-4
+            .pure-u-1-3
               .l-box
-               a(href='https://www.facebook.com/codepuk2020')
+              a(href='https://www.facebook.com/codepuk2020')
                 img(class='displayed', src='/socials/fb.png', width = 50, height= auto)
-             .pure-u-1-4
+            .pure-u-1-3
               .l-box
-               a(href='https://www.instagram.com/codepuk2020/')
+              a(href='https://www.instagram.com/codepuk2020/')
                 img(class='displayed', src='/socials/ig.png', width = 50, height= auto)
-             .pure-u-1-4
+            .pure-u-1-3
               .l-box
-               a(href='https://www.linkedin.com/company/construction-development-partnership')
+              a(href='https://www.linkedin.com/company/construction-development-partnership')
                 img(class='displayed', src='/socials/li.png', width = 50, height= auto)
 
-           
 
-            
-
-            .l-box         
-               center
-                iframe(allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=false' width='300')
             .l-box 
               center
-               iframe(allowtransparency='' frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/867484/latest-rides/0e46dfddebd0b5c1664abd42e124531173b64534?show_rides=true' width='300')
+                iframe(allowtransparency frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/1040721/latest-rides/704c47a76ba86a03cf0c64c8f41965f3a118c31c?show_rides=true' width='300')
 
      .footer
       button.pure-button#start-animation Restart Journey
@@ -112,8 +110,6 @@ body
           li.pure-menu-item
             a.pure-menu-link(href='https://www.linkedin.com/company/construction-development-partnership') Linkedin
           li.pure-menu-item
-            a.pure-menu-link(href='https://www.facebook.com/Construction-and-Development-Partnership-200566590093039') Facebook
-          li.pure-menu-item
-            a.pure-menu-link(href='https://twitter.com/codepsl?lang=en') Twitter
+            a.pure-menu-link(href='https://www.facebook.com/codepuk2020') Facebook
           li.pure-menu-item
             a.pure-menu-link(href='https://www.instagram.com/codepuk2020/') Instagram
