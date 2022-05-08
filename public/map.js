@@ -35,14 +35,14 @@ new ol.layer.Tile({
 fetch('./coordinates.json').then(function (response) {
 response.json().then(function (result) {
 var polyline = result.features[0].geometry.coordinates;
-/*
+
 var route = new ol.format.Polyline({
 factor: 1e6,
 }).readGeometry(polyline, {
 dataProjection: 'EPSG:4326',
 featureProjection: 'EPSG:3857',
 });
-*/
+
 var route = new ol.geom.LineString(polyline);
 // Coordinates need to be in the view's projection, which is
 // 'EPSG:3857' if nothing else is configured for your ol.View instance
