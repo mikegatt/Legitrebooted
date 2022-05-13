@@ -37,14 +37,14 @@ var distancetotal=1;
 var distancerun = 1;
 //these two make up for the face that the strava group total resets each week.
 //if the server needs to be rebooted mid way through the chllenge then these can help reset the distances
-var lasttotaldistance = 1;
+var lasttotaldistance = 337;
 var laststravadist = 1000;
 
 //initialise these at the beginning then set a timer to grab the data every 30min
 readCoordinates();
 getDistance();
 //UNCOMMENT THE BELOW WHEN WE START  <<<<<<<<<<<<<<---------------------------------------------------------------------------
-//setInterval(getDistance,1000*60*30);
+setInterval(getDistance,1000*60*30);
 
 //read the geojson coordinate file and load up the total distance as distancetotal
 function readCoordinates(){
